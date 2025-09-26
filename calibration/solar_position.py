@@ -4,17 +4,10 @@ import os
 from typing import Dict, Tuple, List
 from datetime import datetime
 import glob
+import csv
 
-def create_verification_directory(base_path: str = "./sun_detection_verification") -> str:
-    """
-    Creates a verification directory with timestamp for organizing marked images.
-    
-    Args:
-        base_path (str): Base directory path.
-    
-    Returns:
-        str: Full path to created verification directory.
-    """
+def create_verification_directory(base_path: str = "./../../Results/sun_detection_verification") -> str:
+
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     verification_dir = os.path.join(base_path, f"verification_{timestamp}")
     os.makedirs(verification_dir, exist_ok=True)
@@ -39,7 +32,7 @@ def detect_sun_position_with_marking(image_path: str, output_dir: str) -> Tuple[
     
     original_img = img.copy()  # Preserve original for marking
     h, w = img.shape[:2]
-    print(f"Processing {image_path} (dimensions: {w}x{h})")
+    # print(f"Processing {image_path} (dimensions: {w}x{h})")
     
     # Step 2: Preprocess for robustness - Gaussian blurring and edge detection
     blurred = cv2.GaussianBlur(img, (5, 5), 0)  # Reduce noise
@@ -115,42 +108,43 @@ def detect_sun_position_with_marking(image_path: str, output_dir: str) -> Tuple[
     circle_color = (255, 0, 0) if hough_refined else (0, 255, 0)  # BGR
     circle_thickness = 3 if hough_refined else 2
     
-    # Draw main detection circle (radius based on blob size)
+    # # Draw main detection circle (radius based on blob size)
     detection_radius = int(np.sqrt(area / np.pi))  # Approximate radius
     cv2.circle(original_img, (u_i, v_i), detection_radius, circle_color, circle_thickness)
     
-    # Draw center point
+    # # Draw center point
     cv2.circle(original_img, (u_i, v_i), 5, (0, 0, 255), -1)  # Red center dot
     
-    # Add coordinate text label
+    # # Add coordinate text label
     text = f"Sun: ({u_i}, {v_i})"
     text_color = (255, 255, 255) if hough_refined else (0, 255, 0)  # White or green
     cv2.putText(original_img, text, (u_i + 10, v_i - 10), 
                cv2.FONT_HERSHEY_SIMPLEX, 0.7, text_color, 2)
     
-    # Add area information
-    area_text = f"Area: {area:.0f}px²"
-    cv2.putText(original_img, area_text, (50, h - 50), 
-               cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1)
+    # # Add area information
+    # area_text = f"Area: {area:.0f}px²"
+    # cv2.putText(original_img, area_text, (50, h - 50), 
+    #            cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1)
     
-    # Add detection method indicator
-    method_text = "HOUGH" if hough_refined else "BLOB"
-    cv2.putText(original_img, f"Method: {method_text}", (50, 30), 
-               cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 0), 1)
+    # # Add detection method indicator
+    # method_text = "HOUGH" if hough_refined else "BLOB"
+    # cv2.putText(original_img, f"Method: {method_text}", (50, 30), 
+    #            cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 0), 1)
     
-    # Generate output filename
+    # # Generate output filename
     status = "hough" if hough_refined else "blob"
     output_filename = os.path.basename(image_path).replace('.jpg', f'_{status}_detected.jpg')
     output_path = os.path.join(output_dir, output_filename)
     
     # Save marked image
     cv2.imwrite(output_path, original_img)
-    print(f"  Detected sun at ({u_i}, {v_i}) with area {area} - Saved: {output_filename}")
+    print(f"  Detected sun at ({u_i}, {v_i})")
+    #  with area {area} - Saved: {output_filename}
     
     return u_i, v_i
 
 def process_filtered_images_with_verification(image_paths: List[str], 
-                                           output_dir: str = "./sun_detection_verification") -> Dict[str, Tuple[int, int]]:
+                                           output_dir: str = "./../../Results/sun_detection_verification") -> Dict[str, Tuple[int, int]]:
     """
     Processes filtered images with visual marking for verification.
     
@@ -181,6 +175,28 @@ def process_filtered_images_with_verification(image_paths: List[str],
     
     return sun_positions
 
+def write_sun_positions_to_csv(sun_positions: Dict[str, Tuple[int, int]], csv_path: str = "./../../Results/sun_positions1.csv") -> None:
+    """
+    Writes the detected sun positions to a CSV file.
+    
+    Args:
+        sun_positions (Dict[str, Tuple[int, int]]): Dictionary of {image_path: (u_i, v_i)}.
+        csv_path (str): Path to the output CSV file.
+    """
+    # Ensure the directory exists
+    os.makedirs(os.path.dirname(csv_path), exist_ok=True)
+    
+    with open(csv_path, 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        # Write header
+        writer.writerow(["Image Name", "u_i", "v_i"])
+        
+        for path, (u, v) in sun_positions.items():
+            image_name = str(os.path.splitext(os.path.basename(path))[0]).strip()
+            writer.writerow([image_name, u, v])
+    
+    print(f"Sun positions written to: {csv_path}")
+
 # Example usage (replace with your filtered image paths)
 if __name__ == "__main__":
     # Example filtered image paths (update this list with your actual paths)
@@ -192,6 +208,9 @@ if __name__ == "__main__":
     
     # Process images with visual marking
     positions = process_filtered_images_with_verification(filtered_paths)
+
+    # Write positions to CSV
+    write_sun_positions_to_csv(positions)
     
     print("\n=== DETECTED SUN POSITIONS ===")
     for path, (u, v) in positions.items():
