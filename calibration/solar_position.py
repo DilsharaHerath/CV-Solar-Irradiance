@@ -5,6 +5,7 @@ from typing import Dict, Tuple, List
 from datetime import datetime
 import glob
 import csv
+from dataset_access import get_fisheye_image_paths
 
 def create_verification_directory(base_path: str = "./../../Results/sun_detection_verification") -> str:
 
@@ -201,19 +202,24 @@ def write_sun_positions_to_csv(sun_positions: Dict[str, Tuple[int, int]], csv_pa
 if __name__ == "__main__":
     # Example filtered image paths (update this list with your actual paths)
     img_paths = './../../dataset/Cropped/*.jpg'
-    filtered_paths = []
-    for item in glob.glob(img_paths):
-        filtered_paths.append(item)
-    # print(filtered_paths)
-    
-    # Process images with visual marking
-    positions = process_filtered_images_with_verification(filtered_paths)
+    base_path = '/storage2/CV_Irradiance/datasets/'
+    image_paths = get_fisheye_image_paths(base_path)
+    for path in image_paths:
+        print(path)
 
-    # Write positions to CSV
-    write_sun_positions_to_csv(positions)
+    # filtered_paths = []
+    # for item in glob.glob(img_paths):
+    #     filtered_paths.append(item)
+    # # print(filtered_paths)
     
-    print("\n=== DETECTED SUN POSITIONS ===")
-    for path, (u, v) in positions.items():
-        print(f"{os.path.basename(path)}: ({u}, {v})")
+    # # Process images with visual marking
+    # positions = process_filtered_images_with_verification(filtered_paths)
+
+    # # Write positions to CSV
+    # write_sun_positions_to_csv(positions)
     
-    print(f"\nCheck the '{os.path.basename(create_verification_directory())}' folder for verification images!")
+    # print("\n=== DETECTED SUN POSITIONS ===")
+    # for path, (u, v) in positions.items():
+    #     print(f"{os.path.basename(path)}: ({u}, {v})")
+    
+    # print(f"\nCheck the '{os.path.basename(create_verification_directory())}' folder for verification images!")
