@@ -51,7 +51,7 @@ def convert_datetime_format(datetime_strings):
 
 
 # Load cropped images and detect sun positions
-image_path = './../../dataset/Cropped/*.jpg'
+image_path = '../../data/processed/cropped/*.jpg'
 image_paths = []
 for item in glob.glob(image_path):
     image_paths.append(item)

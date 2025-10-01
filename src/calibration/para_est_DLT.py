@@ -67,8 +67,8 @@ def dlt_estimation(image_points: List[np.ndarray], world_points: List[np.ndarray
 # Main execution
 if __name__ == "__main__":
     # File paths
-    sun_positions_csv = "./../../Results/sun_positions1.csv"
-    solar_vectors_csv = "./../../Results/solar_vectors.csv"
+    sun_positions_csv = "../../results/sun_positions1.csv"
+    solar_vectors_csv = "../../results/solar_vectors.csv"
     
     # Read data
     sun_positions = read_sun_positions(sun_positions_csv)
@@ -93,7 +93,7 @@ if __name__ == "__main__":
     
     # Initial intrinsic matrix K (approximate for Q25, 1536x1536 cropped)
     # h, w = 1536, 1536  # Adjust based on your cropped size
-    img_path = './../../dataset/Cropped/20191001122230.jpg'
+    img_path = '../../data/processed/cropped/20191001122230.jpg'
     # Initial intrinsic matrix K (approximate for Q25, 1536x1536 cropped)
     img = cv2.imread(img_path)
     h, w = img.shape[:2]

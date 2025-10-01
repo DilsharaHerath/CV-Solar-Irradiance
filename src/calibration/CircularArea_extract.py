@@ -43,19 +43,13 @@ def extract_circular_region(image_path, output_path, center=None, radius=None):
     print(f"Cropped: {filename}")
 
 if __name__ == "__main__":
-    # Example filtered image paths (update this list with your actual paths)
-
-    # image_paths = get_fisheye_image_paths(base_path)
-    # for path in image_paths:  
-    #     part = extract_timestamp_and_sequence(path)
-    #     output_path = output_image_path + f'/{part}.jpg'
-    #     # print(output_path)
-    #     extract_circular_region(path, output_path)
-    #     print(f'Completed {path}')
-    output_image_path = '/storage2/CV_Irradiance/datasets/cropped_09/'
+    # Example usage: extract circular regions from fisheye images
+    # Update these paths to match your data structure
+    
+    output_image_path = '../../data/processed/cropped/'
     os.makedirs(output_image_path, exist_ok=True)
 
-    base_path = '/storage2/CV_Irradiance/datasets/'
+    base_path = '../../data/images/raw/'
     image_paths = get_fisheye_image_paths(base_path)
     for path in image_paths:
         extract_circular_region(path, output_image_path)

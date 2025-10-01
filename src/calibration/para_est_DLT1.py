@@ -131,7 +131,7 @@ if __name__ == "__main__":
     #         error = np.linalg.norm(proj[:2] - x[:2])
     #         print(f"Image {list(common_images)[i][:15]}... Reprojection Error: {error:.2f} pixels")
 
-    u_vals, v_vals = zip(*[pos for pos in read_sun_positions("./../../Results/sun_positions1.csv").values()])
+    u_vals, v_vals = zip(*[pos for pos in read_sun_positions("../../results/sun_positions1.csv").values()])
     plt.scatter(u_vals, v_vals)
     plt.title("Detected Sun Positions")
     plt.xlabel("u_i (pixels)")

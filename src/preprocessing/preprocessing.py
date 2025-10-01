@@ -2,7 +2,7 @@ import os
 import shutil
 
 # Specify the directory containing the image dataset
-input_dir = r'./../dataset/13'  # Update this path to your dataset location
+input_dir = r'../../data/images/raw'  # Update this path to your dataset location
 
 # Check if the directory exists
 if not os.path.exists(input_dir):

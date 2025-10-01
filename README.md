@@ -68,7 +68,8 @@ cd CV-Solar-Irradiance
 
 2. Set up your data directories:
 ```bash
-mkdir -p data/images/{raw,cropped}
+mkdir -p data/images/raw
+mkdir -p data/processed/cropped
 mkdir -p results/{calibration,optical_flow,visualizations}
 ```
 
@@ -124,9 +125,10 @@ python src/calibration/para_est_DLT.py
 
 Compute optical flow between consecutive images:
 ```bash
+# Note: Requires RAFT model setup and core dependencies
 python src/optical_flow/opticalflow_cloudData1.py \
     --cfg config/raft_config.yaml \
-    --input_dir data/images/cropped \
+    --input_dir data/images/raw \
     --output_dir results/optical_flow
 ```
 

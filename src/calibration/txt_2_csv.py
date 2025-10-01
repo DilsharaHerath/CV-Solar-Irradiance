@@ -22,7 +22,7 @@ def convert_to_csv(input_file, output_file):
                     writer.writerow(data[:6])  # Take first 6 columns
 
 # Usage
-input_filename = './../dataset/PSA_timeSeries/PSA_timeSeries_Metas.txt'
+input_filename = '../../data/raw/PSA_timeSeries_Metas.csv'
 output_filename = 'PSA_timeSeries_data2.csv'
 
 convert_to_csv(input_filename, output_filename)

@@ -9,7 +9,7 @@ echo "=== CV-Solar-Irradiance Processing Pipeline ==="
 echo "Starting at: $(date)"
 
 # Configuration
-PROJECT_ROOT="/path/to/CV-Solar-Irradiance"  # Update this path
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"  # Auto-detect project root
 PYTHON_ENV="python"  # or "conda run -n myenv python"
 
 # Change to project directory
@@ -46,26 +46,27 @@ echo "✓ Camera parameter estimation completed"
 echo ""
 echo "Step 4: Optical Flow Analysis"
 echo "============================="
-$PYTHON_ENV src/optical_flow/opticalflow_cloudData1.py \
-    --cfg config/raft_config.yaml \
-    --input_dir data/images/cropped \
-    --output_dir results/optical_flow \
-    --device cuda
-echo "✓ Optical flow computation completed"
+# Note: RAFT model and core dependencies need to be available
+# $PYTHON_ENV src/optical_flow/opticalflow_cloudData1.py \
+#     --cfg config/raft_config.yaml \
+#     --input_dir data/images/raw \
+#     --output_dir results/optical_flow \
+#     --device cuda
+echo "⚠ Optical flow step requires RAFT model setup (commented out)"
 
 echo ""
 echo "Step 5: Flow Visualization"
 echo "========================="
-$PYTHON_ENV src/optical_flow/visualize_flow.py \
-    --input_dir results/optical_flow \
-    --output_dir results/visualizations
-echo "✓ Flow visualization completed"
+# $PYTHON_ENV src/optical_flow/visualize_flow.py \
+#     --input_dir results/optical_flow \
+#     --output_dir results/visualizations
+echo "⚠ Flow visualization step requires flow data (commented out)"
 
 echo ""
-echo "=== Pipeline Completed Successfully ==="
+echo "=== Pipeline Core Steps Completed ==="
 echo "Finished at: $(date)"
 echo ""
 echo "Results available in:"
-echo "  - Calibration: results/calibration/"
-echo "  - Optical Flow: results/optical_flow/"
-echo "  - Visualizations: results/visualizations/"
+echo "  - Calibration: results/"
+echo "  - Raw data: data/raw/"
+echo "  - Processed data: data/processed/"

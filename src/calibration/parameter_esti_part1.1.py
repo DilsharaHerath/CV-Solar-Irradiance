@@ -8,7 +8,7 @@ import os
 import re
 
 # Load the cropped image
-img = cv2.imread('./../../dataset/Cropped/20191001122230.jpg')
+img = cv2.imread('../../data/processed/cropped/20191001122230.jpg')
 if img is None:
     raise ValueError("Image not loaded. Check the file path.")
 
@@ -103,7 +103,7 @@ def convert_datetime_format(datetime_strings):
 
 
 # Load cropped images and detect sun positions
-image_path = './../../dataset/Cropped/*.jpg'
+image_path = '../../data/processed/cropped/*.jpg'
 image_paths = []
 for item in glob.glob(image_path):
     image_paths.append(item)

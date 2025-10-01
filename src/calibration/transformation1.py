@@ -28,4 +28,4 @@ def read_mesor(path):
     # meta = dict(lat=float(lat), lon=float(lon), alt=float(alt))
     # return df, meta
 
-read_mesor('./../dataset/PSA_timeSeries/PSA_timeSeries_Metas - Copy.txt')
+read_mesor('../../data/raw/PSA_timeSeries_Metas.csv')

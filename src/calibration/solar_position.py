@@ -7,7 +7,7 @@ import glob
 import csv
 from dataset_access import get_fisheye_image_paths
 
-def create_verification_directory(base_path: str = "./../../Results/sun_detection_verification") -> str:
+def create_verification_directory(base_path: str = "../../results/sun_detection_verification") -> str:
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     verification_dir = os.path.join(base_path, f"verification_{timestamp}")
@@ -145,7 +145,7 @@ def detect_sun_position_with_marking(image_path: str, output_dir: str) -> Tuple[
     return u_i, v_i
 
 def process_filtered_images_with_verification(image_paths: List[str], 
-                                           output_dir: str = "./../../Results/sun_detection_verification") -> Dict[str, Tuple[int, int]]:
+                                           output_dir: str = "../../results/sun_detection_verification") -> Dict[str, Tuple[int, int]]:
     """
     Processes filtered images with visual marking for verification.
     
@@ -176,7 +176,7 @@ def process_filtered_images_with_verification(image_paths: List[str],
     
     return sun_positions
 
-def write_sun_positions_to_csv(sun_positions: Dict[str, Tuple[int, int]], csv_path: str = "./../../Results/sun_positions1.csv") -> None:
+def write_sun_positions_to_csv(sun_positions: Dict[str, Tuple[int, int]], csv_path: str = "../../results/sun_positions1.csv") -> None:
     """
     Writes the detected sun positions to a CSV file.
     
@@ -201,8 +201,8 @@ def write_sun_positions_to_csv(sun_positions: Dict[str, Tuple[int, int]], csv_pa
 # Example usage (replace with your filtered image paths)
 if __name__ == "__main__":
     # Example filtered image paths (update this list with your actual paths)
-    img_paths = './../../dataset/Cropped/*.jpg'
-    base_path = '/storage2/CV_Irradiance/datasets/'
+    img_paths = '../../data/processed/cropped/*.jpg'
+    base_path = '../../data/images/raw/'
     image_paths = get_fisheye_image_paths(base_path)
     for path in image_paths:
         print(path)

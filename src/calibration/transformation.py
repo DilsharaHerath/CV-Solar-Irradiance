@@ -18,8 +18,8 @@ import datetime as dt
 from pathlib import Path
 
 # ------------------------ CONFIG ------------------------
-IMG_GLOB = "./../dataset/13/*.jpg"          # e.g. "/data/DLR/*.jpg"
-MESOR_PATH = "./../dataset/PSA_timeSeries/PSA_timeSeries_Metas.txt"
+IMG_GLOB = "../../data/images/raw/*.jpg"          # e.g. "/data/DLR/*.jpg"
+MESOR_PATH = "../../data/raw/PSA_timeSeries_Metas.csv"
 LOCAL_TZ = "Europe/Madrid"                  # or "Etc/GMT-1" to force UTC+1 all season
 SAMPLE_STRIDE = 10                          # use every Nth file when scanning (speeds up)
 MAX_IMAGES = 120                          # cap used frames

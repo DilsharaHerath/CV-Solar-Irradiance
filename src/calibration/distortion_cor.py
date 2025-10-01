@@ -7,7 +7,7 @@ import io
 import textwrap
 import csv
 
-image_path = './../dataset/13/20191001130000.jpg'
+image_path = '../../data/images/raw/20191001130000.jpg'
 timeseries_path = './PSA_timeSeries_data.csv'
 
 image1 = cv2.imread(image_path)

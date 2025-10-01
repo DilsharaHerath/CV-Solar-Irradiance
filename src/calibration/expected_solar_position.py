@@ -19,8 +19,8 @@ def parse_timestamp(image_name):
     return f"{year}-{month}-{day}T{hour}:{minute}:{second}"
 
 # Read CSV and compute solar positions
-input_csv = "./../../Results/sun_positions1.csv"
-output_csv = "./../../Results/solar_vectors.csv"
+input_csv = "../../results/sun_positions1.csv"
+output_csv = "../../results/solar_vectors.csv"
 
 # df = pd.read_csv(output_csv)
 # print(df.info())

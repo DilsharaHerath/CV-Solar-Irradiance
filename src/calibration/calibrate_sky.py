@@ -61,7 +61,7 @@ def project_fisheye(K, D, R, dirs):
 
 # ---- Collect (u,v) and sun directions ----
 rows = []
-for fn in sorted(glob.glob('./../dataset/13/*.jpg')):   # point to your folder
+for fn in sorted(glob.glob('../../data/images/raw/*.jpg')):   # point to your folder
     ts = parse_ts_from_name(fn)
     img = cv.imread(fn)
     uv  = find_sun_xy(img)

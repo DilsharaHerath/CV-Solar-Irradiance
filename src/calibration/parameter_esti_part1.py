@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Load the cropped image
-img = cv2.imread('./../../dataset/Cropped/20191001122230.jpg')
+img = cv2.imread('../../data/processed/cropped/20191001122230.jpg')
 if img is None:
     raise ValueError("Image not loaded. Check the file path.")
 
