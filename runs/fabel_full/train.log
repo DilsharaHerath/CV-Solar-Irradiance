@@ -1,0 +1,94 @@
+2025-10-01 21:16:31,617 | INFO | root | Using device: cuda
+2025-10-01 21:18:33,663 | INFO | root | Inferred train window: 2019-09-01 00:00:00 to 2019-10-31 23:59:00
+2025-10-01 21:18:33,663 | INFO | root | Inferred val window: 2019-11-01 00:00:00 to 2019-11-30 23:59:00
+2025-10-01 21:19:26,050 | INFO | root | Verified 3 sample(s) for image/series alignment
+2025-10-01 21:19:52,906 | INFO | root | Verified 1 sample(s) for image/series alignment
+2025-10-01 21:19:52,931 | INFO | root | Train samples: 40673
+2025-10-01 21:19:52,932 | INFO | root | Validation samples: 17376
+2025-10-01 21:47:45,205 | INFO | root | Using device: cuda
+2025-10-01 21:51:12,120 | INFO | root | Inferred train window: 2019-09-01 00:00:00 to 2019-10-31 23:59:00
+2025-10-01 21:51:12,121 | INFO | root | Inferred val window: 2019-11-01 00:00:00 to 2019-11-30 23:59:00
+2025-10-01 21:52:44,938 | INFO | root | Verified 3 sample(s) for image/series alignment
+2025-10-01 21:53:31,676 | INFO | root | Verified 1 sample(s) for image/series alignment
+2025-10-01 21:53:31,740 | INFO | root | Train samples: 40673
+2025-10-01 21:53:31,741 | INFO | root | Validation samples: 17376
+2025-10-01 22:10:46,373 | INFO | root | Using device: cuda:1
+2025-10-01 22:14:12,407 | INFO | root | Inferred train window: 2019-09-01 00:00:00 to 2019-10-31 23:59:00
+2025-10-01 22:14:12,407 | INFO | root | Inferred val window: 2019-11-01 00:00:00 to 2019-11-30 23:59:00
+2025-10-01 22:15:43,133 | INFO | root | Verified 3 sample(s) for image/series alignment
+2025-10-01 22:16:33,005 | INFO | root | Verified 1 sample(s) for image/series alignment
+2025-10-01 22:16:33,124 | INFO | root | Train samples: 40673
+2025-10-01 22:16:33,128 | INFO | root | Validation samples: 17376
+2025-10-01 22:54:28,424 | INFO | root | Computed normalization statistics
+2025-10-01 22:54:28,427 | INFO | root | Saved normalization stats to runs/fabel_full/normalization.pt
+2025-10-01 22:54:46,239 | INFO | v_transformer.training | Epoch 1 Step 50 Loss 258514.8594
+2025-10-01 22:55:00,032 | INFO | v_transformer.training | Epoch 1 Step 100 Loss 317588.0000
+2025-10-01 22:55:13,218 | INFO | v_transformer.training | Epoch 1 Step 150 Loss 176087.8125
+2025-10-01 22:55:28,652 | INFO | v_transformer.training | Epoch 1 Step 200 Loss 256751.1719
+2025-10-01 22:55:41,865 | INFO | v_transformer.training | Epoch 1 Step 250 Loss 351837.3438
+2025-10-01 22:55:54,354 | INFO | v_transformer.training | Epoch 1 Step 300 Loss 367365.9688
+2025-10-01 22:56:09,187 | INFO | v_transformer.training | Epoch 1 Step 350 Loss 190727.3125
+2025-10-01 22:56:21,671 | INFO | v_transformer.training | Epoch 1 Step 400 Loss 329708.5938
+2025-10-01 22:56:36,815 | INFO | v_transformer.training | Epoch 1 Step 450 Loss nan
+2025-10-01 22:56:49,642 | INFO | v_transformer.training | Epoch 1 Step 500 Loss nan
+2025-10-01 22:57:03,643 | INFO | v_transformer.training | Epoch 1 Step 550 Loss nan
+2025-10-01 22:57:17,119 | INFO | v_transformer.training | Epoch 1 Step 600 Loss nan
+2025-10-01 22:57:29,802 | INFO | v_transformer.training | Epoch 1 Step 650 Loss nan
+2025-10-01 22:57:42,763 | INFO | v_transformer.training | Epoch 1 Step 700 Loss nan
+2025-10-01 22:57:57,645 | INFO | v_transformer.training | Epoch 1 Step 750 Loss nan
+2025-10-01 22:58:10,248 | INFO | v_transformer.training | Epoch 1 Step 800 Loss nan
+2025-10-01 22:58:25,233 | INFO | v_transformer.training | Epoch 1 Step 850 Loss nan
+2025-10-01 22:58:38,275 | INFO | v_transformer.training | Epoch 1 Step 900 Loss nan
+2025-10-01 22:58:53,338 | INFO | v_transformer.training | Epoch 1 Step 950 Loss nan
+2025-10-01 22:59:06,046 | INFO | v_transformer.training | Epoch 1 Step 1000 Loss nan
+2025-10-01 22:59:18,713 | INFO | v_transformer.training | Epoch 1 Step 1050 Loss nan
+2025-10-01 22:59:31,752 | INFO | v_transformer.training | Epoch 1 Step 1100 Loss nan
+2025-10-01 22:59:46,407 | INFO | v_transformer.training | Epoch 1 Step 1150 Loss nan
+2025-10-01 23:00:00,793 | INFO | v_transformer.training | Epoch 1 Step 1200 Loss nan
+2025-10-01 23:00:15,336 | INFO | v_transformer.training | Epoch 1 Step 1250 Loss nan
+2025-10-01 23:00:27,680 | INFO | v_transformer.training | Epoch 1 Step 1300 Loss nan
+2025-10-01 23:00:41,729 | INFO | v_transformer.training | Epoch 1 Step 1350 Loss nan
+2025-10-01 23:00:54,446 | INFO | v_transformer.training | Epoch 1 Step 1400 Loss nan
+2025-10-01 23:01:07,264 | INFO | v_transformer.training | Epoch 1 Step 1450 Loss nan
+2025-10-01 23:01:20,432 | INFO | v_transformer.training | Epoch 1 Step 1500 Loss nan
+2025-10-01 23:03:27,827 | INFO | root | Using device: cuda:1
+2025-10-01 23:05:31,562 | INFO | root | Inferred train window: 2019-09-01 00:00:00 to 2019-10-31 23:59:00
+2025-10-01 23:05:31,562 | INFO | root | Inferred val window: 2019-11-01 00:00:00 to 2019-11-30 23:59:00
+2025-10-01 23:06:24,204 | INFO | root | Verified 3 sample(s) for image/series alignment
+2025-10-01 23:06:49,284 | INFO | root | Verified 1 sample(s) for image/series alignment
+2025-10-01 23:06:49,306 | INFO | root | Train samples: 40673
+2025-10-01 23:06:49,307 | INFO | root | Validation samples: 17376
+2025-10-01 23:34:35,877 | INFO | root | Computed normalization statistics
+2025-10-01 23:34:35,882 | INFO | root | Saved normalization stats to runs/fabel_full/normalization.pt
+2025-10-01 23:34:54,608 | INFO | v_transformer.training | Epoch 1 Step 50 Loss 280576.6562
+2025-10-01 23:35:08,024 | INFO | v_transformer.training | Epoch 1 Step 100 Loss 217390.0781
+2025-10-01 23:35:20,715 | INFO | v_transformer.training | Epoch 1 Step 150 Loss 248518.5469
+2025-10-01 23:35:33,529 | INFO | v_transformer.training | Epoch 1 Step 200 Loss 176460.1875
+2025-10-01 23:35:47,263 | INFO | v_transformer.training | Epoch 1 Step 250 Loss 80883.2109
+2025-10-01 23:36:01,488 | INFO | v_transformer.training | Epoch 1 Step 300 Loss 391777.9688
+2025-10-01 23:36:16,995 | INFO | v_transformer.training | Epoch 1 Step 350 Loss nan
+2025-10-01 23:36:29,767 | INFO | v_transformer.training | Epoch 1 Step 400 Loss 201196.2031
+2025-10-01 23:36:44,640 | INFO | v_transformer.training | Epoch 1 Step 450 Loss nan
+2025-10-01 23:36:57,463 | INFO | v_transformer.training | Epoch 1 Step 500 Loss nan
+2025-10-01 23:37:10,654 | INFO | v_transformer.training | Epoch 1 Step 550 Loss nan
+2025-10-01 23:37:23,461 | INFO | v_transformer.training | Epoch 1 Step 600 Loss nan
+2025-10-01 23:37:37,199 | INFO | v_transformer.training | Epoch 1 Step 650 Loss nan
+2025-10-01 23:37:52,606 | INFO | v_transformer.training | Epoch 1 Step 700 Loss nan
+2025-10-01 23:38:05,929 | INFO | v_transformer.training | Epoch 1 Step 750 Loss nan
+2025-10-01 23:38:18,874 | INFO | v_transformer.training | Epoch 1 Step 800 Loss nan
+2025-10-01 23:38:32,405 | INFO | v_transformer.training | Epoch 1 Step 850 Loss nan
+2025-10-01 23:38:46,474 | INFO | v_transformer.training | Epoch 1 Step 900 Loss nan
+2025-10-01 23:39:00,716 | INFO | v_transformer.training | Epoch 1 Step 950 Loss nan
+2025-10-01 23:39:13,464 | INFO | v_transformer.training | Epoch 1 Step 1000 Loss nan
+2025-10-01 23:41:38,216 | INFO | root | Using device: cuda:1
+2025-10-01 23:44:34,955 | INFO | root | Using device: cuda:1
+2025-10-01 23:46:40,604 | INFO | root | Inferred train window: 2019-09-01 00:00:00 to 2019-10-31 23:59:00
+2025-10-01 23:46:40,604 | INFO | root | Inferred val window: 2019-11-01 00:00:00 to 2019-11-30 23:59:00
+2025-10-01 23:47:35,561 | INFO | root | Verified 3 sample(s) for image/series alignment
+2025-10-01 23:48:02,254 | INFO | root | Verified 1 sample(s) for image/series alignment
+2025-10-01 23:48:02,276 | INFO | root | Train samples: 40673
+2025-10-01 23:48:02,276 | INFO | root | Validation samples: 17376
+2025-10-02 00:16:00,899 | INFO | root | Computed normalization statistics
+2025-10-02 00:16:00,903 | INFO | root | Saved normalization stats to runs/fabel_full/normalization.pt
+2025-10-02 10:40:55,901 | INFO | root | Using device: cuda:1
+2025-10-02 10:42:28,554 | INFO | root | Using device: cuda:1
