@@ -207,19 +207,19 @@ if __name__ == "__main__":
     for path in image_paths:
         print(path)
 
-    # filtered_paths = []
-    # for item in glob.glob(img_paths):
-    #     filtered_paths.append(item)
-    # # print(filtered_paths)
+    filtered_paths = []
+    for item in glob.glob(img_paths):
+        filtered_paths.append(item)
+    # print(filtered_paths)
     
-    # # Process images with visual marking
-    # positions = process_filtered_images_with_verification(filtered_paths)
+    # Process images with visual marking
+    positions = process_filtered_images_with_verification(filtered_paths)
 
-    # # Write positions to CSV
-    # write_sun_positions_to_csv(positions)
+    # Write positions to CSV
+    write_sun_positions_to_csv(positions)
     
-    # print("\n=== DETECTED SUN POSITIONS ===")
-    # for path, (u, v) in positions.items():
-    #     print(f"{os.path.basename(path)}: ({u}, {v})")
+    print("\n=== DETECTED SUN POSITIONS ===")
+    for path, (u, v) in positions.items():
+        print(f"{os.path.basename(path)}: ({u}, {v})")
     
-    # print(f"\nCheck the '{os.path.basename(create_verification_directory())}' folder for verification images!")
+    print(f"\nCheck the '{os.path.basename(create_verification_directory())}' folder for verification images!")
