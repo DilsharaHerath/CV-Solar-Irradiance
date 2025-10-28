@@ -1,0 +1,93 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+eggs/
+*.egg-info/
+.egg-info/
+.eggs/
+*.whl
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+.env
+.env.*
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Python version manager
+.python-version
+
+# Pytest
+.pytest_cache/
+
+# Coverage reports
+.coverage
+coverage.xml
+htmlcov/
+
+# Mypy
+.mypy_cache/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs and databases
+*.log
+logs/
+*.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Machine learning / CV artifacts
+models/
+checkpoints/
+weights/
+runs/
+logs/
+outputs/
+results/
+*.ckpt
+*.pth
+*.pt
+*.h5
+*.pkl
+*.joblib
+
+# Experiment tracking
+wandb/
+mlruns/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Sensitive / environment files
+secrets.*
+credentials.*
