@@ -3,8 +3,16 @@ from __future__ import annotations
 
 import argparse
 import logging
+import sys
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
+
+# Ensure the repository's src/ is on sys.path when running `python train.py`
+# This allows `from v_transformer import ...` without requiring PYTHONPATH.
+_REPO_ROOT = Path(__file__).resolve().parent
+_SRC_DIR = _REPO_ROOT / "src"
+if _SRC_DIR.exists():
+    sys.path.insert(0, str(_SRC_DIR))
 
 import pandas as pd
 import torch
@@ -27,10 +35,10 @@ from v_transformer import (
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Train the solar nowcasting transformer.")
-    parser.add_argument("--image-root", type=Path, default=Path("/storage2/CV_Irradiance/datasets/full_dataset"), help="Root directory containing ASI images")
-    parser.add_argument("--csv-path", type=Path, default=Path("/storage2/CV_Irradiance/datasets/full_dataset/PSA_timeSeries_Metas.csv"), help="Path to the irradiance/time-series CSV")
-    parser.add_argument("--output-dir", type=Path, default=Path("/storage2/CV_Irradiance/datasets/runs/default"), help="Directory for logs and checkpoints")
-    parser.add_argument("--epochs", type=int, default=10)
+    parser.add_argument("--image-root", type=Path, default=Path("/storage2/CV_Irradiance/datasets/undistorted"), help="Root directory containing ASI images")
+    parser.add_argument("--csv-path", type=Path, default=Path("/storage2/CV_Irradiance/datasets/full_dataset/PSA_timeSeries_Metas_preprocessed.csv"), help="Path to the irradiance/time-series CSV")
+    parser.add_argument("--output-dir", type=Path, default=Path("/storage2/CV_Irradiance/datasets/runs/undistorted"), help="Directory for logs and checkpoints")
+    parser.add_argument("--epochs", type=int, default=25)
     parser.add_argument("--batch-size", type=int, default=16)
     parser.add_argument("--val-batch-size", type=int, default=16)
     parser.add_argument("--num-workers", type=int, default=4)
